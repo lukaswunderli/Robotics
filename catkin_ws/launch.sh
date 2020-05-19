@@ -1,2 +1,2 @@
 source devel/setup.bash
-roslaunch simple_arm robot_spawn.launch
+roslaunch my_robot world.launch
