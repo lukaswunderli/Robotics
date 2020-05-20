@@ -1,2 +1,4 @@
 source devel/setup.bash
-roslaunch my_robot world.launch
+terminator -e "./launchMyRobot.sh" &
+sleep 5
+terminator -e "./launchBallChaser.sh" &
