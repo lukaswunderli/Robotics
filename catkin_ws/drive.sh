@@ -11,7 +11,7 @@ case "$1" in
 		rosservice call /ball_chaser/command_robot "{linear_x: 0.0, angular_z: 0.5}"
 		;;
 	right)
-		rosservice call /ball_chaser/command_robot "{linear_x: 0.5, angular_z: -0.5}"
+		rosservice call /ball_chaser/command_robot "{linear_x: 0.0, angular_z: -0.5}"
 		;;
 	stop)
 		rosservice call /ball_chaser/command_robot "{linear_x: 0.0, angular_z: 0.0}"

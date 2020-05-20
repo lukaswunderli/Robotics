@@ -14,18 +14,21 @@ public:
     pub_ = n_.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
 
     //Topic you want to subscribe
-    sub_ = n_.subscribe("/command_robot", 1, &DriveBot::command_robot_callback, this);
+    //sub_ = n_.subscribe("/command_robot", 1, &DriveBot::command_robot_callback, this);
   }
 
-  void command_robot_callback(const ball_chaser::DriveToTarget::Request& input, const ball_chaser::DriveToTarget::Response& output)
+  bool handle_command_robot_request(ball_chaser::DriveToTarget::Request& input, ball_chaser::DriveToTarget::Response& output)
   {
 	// Create a motor_command object of type geometry_msgs::Twist
         geometry_msgs::Twist motor_command;
         // Set wheel velocities
         motor_command.linear.x = input.linear_x;
-        motor_command.angular.z = output.linear_y;
+        motor_command.angular.z = input.angular_z;
         // Publish angles to drive the robot
         pub_.publish(motor_command);
+        // Return a response message
+        output.msg_feedback = "velocity set - linear.x: " + std::to_string(input.linear_x) + ", angular.z: " + std::to_string(input.linear_x);
+        return true;
   }
 
 private:
@@ -39,9 +42,14 @@ int main(int argc, char** argv)
 {
     // Initialize a ROS node
     ros::init(argc, argv, "drive_bot");
+    ros::NodeHandle n; 
 
     // TODO: Define a drive /ball_chaser/command_robot service with a handle_drive_request callback function
     DriveBot DBObject;
+
+    //Service you want to provide
+    ros::ServiceServer srv = n.advertiseService("/ball_chaser/command_robot", &DriveBot::handle_command_robot_request, &DBObject);
+    ROS_INFO("Ready to receive robot commands");
 
     // Handle ROS communication events
     ros::spin();
