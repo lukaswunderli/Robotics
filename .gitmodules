@@ -1,6 +1,6 @@
 [submodule "catkin_ws/src/simple_arm"]
 	path = 02_GoChaseIt/src/simple_arm
-	url = https://github.com/lukaswunderli/RoboND-simple_arm/
+	url = https://github.com/udacity/RoboND-simple_arm/
 [submodule "localization/src/turtlebot_simulator"]
 	path = localization/src/turtlebot_simulator
 	url = https://github.com/turtlebot/turtlebot_simulator
