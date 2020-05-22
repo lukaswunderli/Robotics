@@ -8,7 +8,7 @@ class ProcessImage {
 
 	    // Define a client service capable of requesting services from command_robot
 	    client_ = n_.serviceClient<ball_chaser::DriveToTarget>("/ball_chaser/command_robot");
-	    n_.setParam("turningRate",2.0);
+	    n_.setParam("turningRate",3.0);
 	    n_.setParam("drivingRate",0.1);
 	}
 
@@ -46,7 +46,7 @@ class ProcessImage {
 	    else {
 		float turningRate = 0.0;
 		float drivingRate = 0.0;
-		float maxDrivingRate = 0.3;
+		float maxDrivingRate = 0.5;
 		n_.getParam("turningRate",turningRate);
 		n_.getParam("drivingRate",drivingRate);
 		x = std::min(maxDrivingRate,drivingRate/whitePixelRatio);
