@@ -8,6 +8,8 @@ class ProcessImage {
 
 	    // Define a client service capable of requesting services from command_robot
 	    client_ = n_.serviceClient<ball_chaser::DriveToTarget>("/ball_chaser/command_robot");
+	    n_.setParam("turningRate",2.0);
+	    n_.setParam("drivingRate",0.1);
 	}
 
 	// This callback function continuously executes and reads the image data
@@ -42,13 +44,13 @@ class ProcessImage {
 		z = 0.0;
 	    }
 	    else {
-		x = 0.3;
-		// z = 0.5 * (step / 2.0 - idx_center_ball);
-
-		// Calculate the average offset (from -step/2.0 to +step/2.0)
-		// Normalize the average offset (from -1.0 to 1.0)
-		// Multiply with magic number -4.0 to turn
-		z = -3.0 * offset_accumulated / count_total / (step /2.0);
+		float turningRate = 0.0;
+		float drivingRate = 0.0;
+		float maxDrivingRate = 0.3;
+		n_.getParam("turningRate",turningRate);
+		n_.getParam("drivingRate",drivingRate);
+		x = std::min(maxDrivingRate,drivingRate/whitePixelRatio);
+		z = -turningRate * offset_accumulated / count_total / (step /2.0);
 	    }
 	    
 	    // Send request to service
