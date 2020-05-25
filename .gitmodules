@@ -1,12 +1,12 @@
 [submodule "localization/src/turtlebot_simulator"]
-	path = localization/src/turtlebot_simulator
+	path = EKFLab/src/turtlebot_simulator
 	url = https://github.com/turtlebot/turtlebot_simulator
 [submodule "localization/src/robot_pose_ekf"]
-	path = localization/src/robot_pose_ekf
+	path = EKFLab/src/robot_pose_ekf
 	url = https://github.com/udacity/robot_pose_ekf
 [submodule "localization/src/odom_to_trajectory"]
-	path = localization/src/odom_to_trajectory
+	path = EKFLab/src/odom_to_trajectory
 	url = https://github.com/udacity/odom_to_trajectory
 [submodule "localization/src/turtlebot"]
-	path = localization/src/turtlebot
+	path = EKFLab/src/turtlebot
 	url = https://github.com/turtlebot/turtlebot
