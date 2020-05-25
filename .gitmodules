@@ -1,6 +1,3 @@
-[submodule "02_GoChaseIt/src/simple_arm"]
-	path = 02_GoChaseIt/src/simple_arm
-	url = https://github.com/udacity/simple_arm.git
 [submodule "localization/src/turtlebot_simulator"]
 	path = localization/src/turtlebot_simulator
 	url = https://github.com/turtlebot/turtlebot_simulator
