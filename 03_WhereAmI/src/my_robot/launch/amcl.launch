@@ -15,8 +15,7 @@
     <!-- If you choose to define initial pose here -->
     <param name="initial_pose_x" value="0"/>
     <param name="initial_pose_y" value="0"/>
-  <node/>
-  <node name="move_base" pkg="move_base" type="move_base"/>
+  </node>
 
   <!-- Move Base -->
   <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
@@ -31,3 +30,4 @@
   </node>
 
 </launch>
+

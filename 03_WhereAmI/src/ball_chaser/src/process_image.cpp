@@ -37,7 +37,7 @@ class ProcessImage {
 		}
 	    }
 	    float whitePixelRatio = count_total/float(height*step);
-	    ROS_INFO_STREAM("whitePixelRatio: " + std::to_string(whitePixelRatio));
+	    //ROS_INFO_STREAM("whitePixelRatio: " + std::to_string(whitePixelRatio));
 
 	    if (count_total == 0 || whitePixelRatio > 0.5) {
 		x = 0.0;
@@ -63,7 +63,7 @@ class ProcessImage {
 	void drive_robot(float lin_x, float ang_z)
 	{
 	    // TODO: Request a service and pass the velocities to it to drive the robot
-	    ROS_INFO_STREAM("Driving the robot to the target.");
+	    //ROS_INFO_STREAM("Driving the robot to the target.");
 	    
 	    // Request service with velocities
 	    ball_chaser::DriveToTarget srv;
