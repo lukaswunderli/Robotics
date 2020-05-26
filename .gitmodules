@@ -10,3 +10,6 @@
 [submodule "localization/src/turtlebot"]
 	path = EKFLab/src/turtlebot
 	url = https://github.com/turtlebot/turtlebot
+[submodule "03_WhereAmI/src/pgm_map_creator"]
+	path = 03_WhereAmI/src/pgm_map_creator
+	url = https://github.com/udacity/pgm_map_creator
