@@ -16,3 +16,12 @@
 [submodule "SLAM/RoboND-OccupancyGridMappingAlgorithm"]
 	path = SLAM/RoboND-OccupancyGridMappingAlgorithm
 	url = https://github.com/udacity/RoboND-OccupancyGridMappingAlgorithm
+[submodule "SLAM/FastSLAM/src/turtlebot"]
+	path = SLAM/FastSLAM/src/turtlebot
+	url = https://github.com/turtlebot/turtlebot
+[submodule "SLAM/FastSLAM/src/turtlebot_simulator"]
+	path = SLAM/FastSLAM/src/turtlebot_simulator
+	url = https://github.com/turtlebot/turtlebot_simulator
+[submodule "SLAM/FastSLAM/src/slam_gmapping"]
+	path = SLAM/FastSLAM/src/slam_gmapping
+	url = https://github.com/ros-perception/slam_gmapping

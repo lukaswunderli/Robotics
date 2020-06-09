@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+  <!-- Launch Gazebo roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=worlds/willowgarage.world-->
+  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+    <arg name="world_file" value="worlds/willowgarage.world"/>
+  </include>
+
+  <!--launch gmappig-->
+  <node name="gmapping" pkg="gmapping" type="slam_gmapping"/>
+
+  <!--launch rviz-->
+  <node name="rviz" pkg="rviz" type="rviz" respawn="false" args="-d $(find main)/rviz/default.rviz"/>
+
+  <!--launch teleop-->
+  <include file="$(find turtlebot_teleop)/launch/keyboard_teleop.launch" />
+
+</launch>
