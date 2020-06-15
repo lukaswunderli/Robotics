@@ -28,3 +28,15 @@
 [submodule "04_MapMyWorld/src/teleop_twist_keyboard"]
 	path = 04_MapMyWorld/src/teleop_twist_keyboard
 	url = https://github.com/ros-teleop/teleop_twist_keyboard
+[submodule "05_HomeServiceRobot/src/turtlebot"]
+	path = 05_HomeServiceRobot/src/turtlebot
+	url = https://github.com/turtlebot/turtlebot
+[submodule "05_HomeServiceRobot/src/turtlebot_interactions"]
+	path = 05_HomeServiceRobot/src/turtlebot_interactions
+	url = https://github.com/turtlebot/turtlebot_interactions
+[submodule "05_HomeServiceRobot/src/turtlebot_simulator"]
+	path = 05_HomeServiceRobot/src/turtlebot_simulator
+	url = https://github.com/turtlebot/turtlebot_simulator
+[submodule "05_HomeServiceRobot/src/slam_gmapping"]
+	path = 05_HomeServiceRobot/src/slam_gmapping
+	url = https://github.com/ros-perception/slam_gmapping
