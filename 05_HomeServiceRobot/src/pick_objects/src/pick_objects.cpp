@@ -36,7 +36,7 @@ int main(int argc, char** argv){
 
   // Define a position and orientation for the robot to reach
 
-  float goals[2][3] = { {-4, -3, -1.57}, {3.2, 0.584, -1.57}  };
+  float goals[2][3] = { {3, 1, -1.57}, {3.2, 0.584, -1.57}  };
 
   int num_points = 2;
 
