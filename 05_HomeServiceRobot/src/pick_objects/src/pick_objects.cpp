@@ -23,10 +23,12 @@ int main(int argc, char** argv){
   double maxRotVel = 0.5;
   double minTransVel = 0.5;
   double maxTransVel = 1.0;
+  double goalYawTolerance = 6.282;
   nh.setParam("move_base/DWAPlannerROS/min_rot_vel",minRotVel);
   nh.setParam("move_base/DWAPlannerROS/max_rot_vel",maxRotVel);
   nh.setParam("move_base/DWAPlannerROS/min_trans_vel",minTransVel);
   nh.setParam("move_base/DWAPlannerROS/max_trans_vel",maxTransVel);
+  nh.setParam("move_base/DWAPlannerROS/yaw_goal_tolerance",goalYawTolerance);
 
   move_base_msgs::MoveBaseGoal goal;
 
@@ -36,7 +38,7 @@ int main(int argc, char** argv){
 
   // Define a position and orientation for the robot to reach
 
-  float goals[2][3] = { {3, 1, -1.57}, {3.2, 0.584, -1.57}  };
+  float goals[2][3] = { {3.0, 0.0, -1.57}, {0.0, 0.0, -1.57}  };
 
   int num_points = 2;
 

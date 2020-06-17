@@ -23,7 +23,7 @@ int main( int argc, char** argv )
 
   // Set our initial shape type to be a cube
   uint32_t shape = visualization_msgs::Marker::SPHERE;
-  float goals[2][3] = { {3, 1, -1.57}, {3.2, 0.584, -1.57}  };
+  float goals[2][3] = { {3.0, 0.0, -1.57}, {0.0, 0.0, -1.57}  };
 
   bool have_thing = false;
   visualization_msgs::Marker marker;
@@ -80,27 +80,24 @@ int main( int argc, char** argv )
       begin = ros::Time::now();
       sleep(1);
     }
-
-    /*if(!isStarted)
-    {
-       isStarted=true;*/
        
 
     float x_distance, y_distance;
 
-    float tolerance = 0.15;
+    float tolerance = 0.25;
     //ROS_INFO("Odom data: %f, %f", odom_x, odom_y);
     ros::Duration duration = ros::Time::now()-begin;
-    ROS_INFO("duration: %f", duration.toSec());
+    x_distance = fabs(marker.pose.position.x - odom_x);
+    y_distance = fabs(marker.pose.position.y - odom_y);
+    ROS_INFO("duration: %f, dx: %f, dy: %f", duration.toSec(),x_distance,y_distance);
 
       if (!have_thing)
       {
         marker_pub.publish(marker);
-        x_distance = fabs(marker.pose.position.x - odom_x);
-        y_distance = fabs(marker.pose.position.y - odom_y);
 
         if((x_distance < tolerance) && (y_distance < tolerance) )
         {
+          ROS_INFO("Pickup Object");
           marker.action = visualization_msgs::Marker::DELETE;
           marker_pub.publish(marker);
           have_thing = true;
@@ -113,7 +110,7 @@ int main( int argc, char** argv )
         y_distance = fabs(goals[1][1] - odom_y);
         if((x_distance < tolerance) && (y_distance < tolerance) )
         {
-          ROS_INFO("Delete marker 2");
+          ROS_INFO("Place Object");
           marker.action = visualization_msgs::Marker::ADD;
           marker.pose.position.x = goals[1][0];
           marker.pose.position.y = goals[1][1];
