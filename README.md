@@ -1,6 +1,4 @@
-# Robotics Software Engineer
-
-### Udacity: Nanodegree Program
+# Udacity: Robotics Software Engineer Nanodegree Program
 
 #### 1. Project: Build my World
 
